@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -33,9 +34,9 @@ const Footer = () => {
                         </p>
                         <div className="dd-footer-links">
                             <a href="#features">Features</a>
-                            <a href="#security">Security</a>
-                            <a href="#pricing">Pricing</a>
-                            <a href="#privacy">Privacy</a>
+                            <Link to="/policies#privacy">Privacy</Link>
+                            <Link to="/policies#security">Security</Link>
+                            <Link to="/policies#terms">Terms</Link>
                         </div>
                     </div>
 
@@ -50,8 +51,8 @@ const Footer = () => {
                 <div className="dd-footer-bottom">
                     <span>© {new Date().getFullYear()} DeenDesk. All rights reserved.</span>
                     <div>
-                        <a href="#terms">Terms</a>
-                        <a href="#contact">Contact</a>
+                        <Link to="/policies#terms">Terms of Service</Link>
+                        <Link to="/policies#privacy">Privacy Policy</Link>
                     </div>
                 </div>
 
@@ -61,3 +62,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
