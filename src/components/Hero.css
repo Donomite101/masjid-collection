@@ -1,0 +1,326 @@
+/* Hero Wrapper - Ctrl Style */
+.hero-ctrl-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    background-color: #fff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Header */
+.ctrl-header-floating {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    width: 100%;
+    position: relative;
+    z-index: 100;
+}
+
+.floating-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-radius: 100px;
+    padding: 8px 25px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.1);
+    gap: 0;
+    /* Gap handled by padding/margins for animation smoothness */
+    max-width: 210px;
+    /* Initial width to fit only logo */
+    overflow: hidden;
+    transition: max-width 0.6s cubic-bezier(0.25, 1, 0.5, 1), padding 0.4s;
+    white-space: nowrap;
+}
+
+.floating-nav-container:hover {
+    max-width: 800px;
+    /* Expanded width */
+    gap: 40px;
+    /* Restore gap on hover if supported, or use margins */
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #000;
+    min-width: max-content;
+    /* Ensure logo doesn't wrap */
+}
+
+.logo-icon {
+    height: 3rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.floating-nav-container:hover .nav-links {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.1s;
+    pointer-events: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+.nav-btn-action {
+    background: #0F5132;
+    /* Brand Green */
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, background 0.2s, opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateX(20px);
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.floating-nav-container:hover .nav-btn-action {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    transition-delay: 0.2s;
+    pointer-events: auto;
+}
+
+.nav-btn-action:hover {
+    transform: scale(1.05);
+    background: #0b3d26;
+}
+
+/* Main Content */
+.ctrl-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.ctrl-subtitle {
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.ctrl-headline-container {
+    margin-bottom: 40px;
+}
+
+.ctrl-headline {
+    font-family: 'Poppins', sans-serif;
+    /* Bold font */
+    font-weight: 700;
+    font-size: 8vw;
+    /* Responsive huge text */
+    line-height: 1;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.ctrl-icon-box {
+    background-color: #000;
+    color: #fff;
+    width: 0.8em;
+    /* Relative to font size */
+    height: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20%;
+    /* Soft square */
+    font-size: 8vw;
+    /* Matches text size */
+}
+
+.ctrl-icon-box svg {
+    font-size: 0.6em;
+    /* Icon inside box */
+}
+
+/* CTA Button */
+.ctrl-cta-green {
+    background-color: #4ade80;
+    /* Bright Green */
+    color: #000;
+    border: 2px solid #000;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 4px 4px 0px #000;
+}
+
+.ctrl-cta-green:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px #000;
+}
+
+.cta-icon-group {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.cta-circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    margin-left: -5px;
+    /* Overlap */
+}
+
+.cta-circle:first-child {
+    margin-left: 0;
+}
+
+.cta-circle.orange {
+    background-color: #fbbf24;
+}
+
+.cta-circle.blue {
+    background-color: #60a5fa;
+}
+
+.cta-circle.white {
+    background-color: #fff;
+}
+
+/* Mobile Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .ctrl-header-floating {
+        padding-top: 20px;
+    }
+
+    .floating-nav-container {
+        width: 92%;
+        max-width: 420px;
+        padding: 14px 18px;
+        border-radius: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        transition: all 0.35s ease;
+    }
+
+    /* TOP ROW: logo + hamburger */
+    .nav-top-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .nav-logo {
+        gap: 8px;
+        font-size: 1rem;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* Hide menu initially */
+    .nav-links,
+    .nav-btn-action {
+        display: none;
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    /* OPEN STATE */
+    .floating-nav-container.mobile-open {
+        padding-bottom: 22px;
+    }
+
+    .floating-nav-container.mobile-open .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 18px;
+        text-align: center;
+        opacity: 1;
+        transform: none;
+    }
+
+    .floating-nav-container.mobile-open .nav-btn-action {
+        display: block;
+        margin-top: 18px;
+        text-align: center;
+        opacity: 1;
+        transform: none;
+    }
+
+    .ctrl-headline {
+        font-size: 15vw;
+        gap: 10px;
+    }
+
+    .ctrl-icon-box {
+        font-size: 15vw;
+        border-radius: 15%;
+    }
+}

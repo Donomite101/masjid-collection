@@ -1,0 +1,225 @@
+.workflow-section {
+    padding: 80px 20px;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.workflow-section .section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.workflow-sticker {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.workflow-sticker::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, currentColor, transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.workflow-sticker:hover::before {
+    opacity: 1;
+}
+
+.workflow-sticker::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.workflow-sticker:hover::after {
+    opacity: 1;
+}
+
+.workflow-sticker:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border-color: currentColor;
+}
+
+.workflow-sticker.blue {
+    color: #3498db;
+}
+
+.workflow-sticker.blue:hover {
+    background: rgba(52, 152, 219, 0.15);
+}
+
+.workflow-sticker.orange {
+    color: #e67e22;
+}
+
+.workflow-sticker.orange:hover {
+    background: rgba(230, 126, 34, 0.15);
+}
+
+.workflow-sticker.green {
+    color: #27ae60;
+}
+
+.workflow-sticker.green:hover {
+    background: rgba(39, 174, 96, 0.15);
+}
+
+.workflow-sticker.yellow {
+    color: #f39c12;
+}
+
+.workflow-sticker.yellow:hover {
+    background: rgba(243, 156, 18, 0.15);
+}
+
+.workflow-sticker.purple {
+    color: #9b59b6;
+}
+
+.workflow-sticker.purple:hover {
+    background: rgba(155, 89, 182, 0.15);
+}
+
+.sticker-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, currentColor, transparent);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: rotate(12deg);
+    transition: transform 0.3s ease;
+}
+
+.workflow-sticker:hover .sticker-number {
+    transform: rotate(0deg) scale(1.1);
+}
+
+.sticker-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    color: currentColor;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+.workflow-sticker h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.5px;
+}
+
+.workflow-sticker p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+/* Animated background particles */
+.workflow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 50%, rgba(102, 126, 234, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(118, 75, 162, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .workflow-section {
+        padding: 60px 15px;
+    }
+
+    .workflow-section .section-title {
+        font-size: 2.2rem;
+    }
+
+    .workflow-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .workflow-sticker {
+        padding: 2rem 1.5rem;
+    }
+
+    .sticker-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        top: 15px;
+        right: 15px;
+    }
+
+    .sticker-icon {
+        font-size: 3rem;
+    }
+
+    .workflow-sticker h3 {
+        font-size: 1.4rem;
+    }
+
+    .workflow-sticker p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .workflow-section .section-title {
+        font-size: 1.8rem;
+    }
+
+    .workflow-sticker {
+        padding: 1.75rem 1.25rem;
+    }
+}

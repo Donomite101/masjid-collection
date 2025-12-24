@@ -1,0 +1,203 @@
+.testimonials-section {
+    padding: 8rem 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.test-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+/* LEFT */
+.test-left {
+    flex: 1;
+    position: relative;
+}
+
+.headline-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.test-headline {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 900;
+    font-size: 6rem;
+    line-height: 0.9;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.smiley-sticker {
+    position: absolute;
+    top: -35px;
+    right: -55px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: #000;
+    color: #facc15;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(15deg);
+}
+
+.test-subtitle {
+    font-size: 1.4rem;
+    margin: 2rem 0 3rem;
+}
+
+.test-cta {
+    padding: 15px 36px;
+    border-radius: 50px;
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+/* RIGHT */
+.test-right {
+    flex: 1.2;
+    overflow-x: auto;
+    position: relative;
+    width: 100%;
+
+    /* Smooth Scroll Snap */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* Hide scrollbar for clean look but keep functionality */
+    /* Actually, for desktop we might want a thin one or rely on hover */
+    scrollbar-width: thin;
+    scrollbar-color: #000 transparent;
+    padding: 20px 0;
+    /* Vertical padding for shadows */
+}
+
+.test-right::-webkit-scrollbar {
+    height: 6px;
+    display: block;
+    /* Show it */
+}
+
+.test-right::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.test-right::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+}
+
+.t-cards-stack {
+    display: flex;
+    gap: 28px;
+    padding-left: 20px;
+    /* Start padding */
+    padding-right: 50px;
+    /* End padding */
+    width: max-content;
+}
+
+/* CARD (9:16) - Neo-Brutalist Theme */
+.t-card {
+    width: 260px;
+    /* Increased from 200px */
+    aspect-ratio: 9 / 14;
+    border-radius: 20px;
+    padding: 22px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+
+    /* Neo-Brutalist Sticker Look */
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px #000;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+
+    /* Snap Alignment */
+    scroll-snap-align: start;
+    scroll-margin-left: 20px;
+    /* Offset for snap */
+}
+
+.t-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px #000;
+}
+
+/* Remove Active/Inactive scaling for simpler native scroll */
+.t-card.is-active,
+.t-card.is-inactive {
+    transform: none;
+    opacity: 1;
+    filter: none;
+}
+
+/* COLORS - Vibrant Neo-Brutalist */
+.t-card.green {
+    background: #4ade80;
+    color: #000;
+}
+
+.t-card.black {
+    background: #171717;
+    color: #fff;
+}
+
+.t-card.black .test-text,
+.t-card.black .test-author h4 {
+    color: #fff;
+}
+
+.t-card.black .test-author span {
+    color: #aaa;
+}
+
+.t-card.yellow {
+    background: #facc15;
+    color: #000;
+}
+
+.t-card.blue {
+    background: #60a5fa;
+    color: #000;
+}
+
+/* TEXT */
+.test-text {
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.test-author h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.test-author span {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .test-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .test-headline {
+        font-size: 4rem;
+    }
+}

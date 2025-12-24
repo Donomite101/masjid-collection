@@ -1,0 +1,152 @@
+.language-section {
+    padding: 6rem 0;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.lang-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 4rem;
+}
+
+.lang-icon-main {
+    font-size: 4rem;
+    color: #fff;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+.section-title-lang {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: #fff;
+}
+
+.languages-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.lang-sticker {
+    background: #fff;
+    border: 4px solid #000;
+    border-radius: 20px;
+    padding: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 8px 8px 0px #fff;
+    /* White shadow on black bg */
+    transition: transform 0.2s, box-shadow 0.2s;
+    min-width: 200px;
+    transform: rotate(-2deg);
+}
+
+.lang-sticker:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.lang-sticker:hover {
+    transform: scale(1.05) rotate(0deg);
+    box-shadow: 12px 12px 0px #fff;
+    z-index: 10;
+}
+
+.lang-native {
+    font-family: 'Poppins', sans-serif;
+    /* Or a font that supports these scripts well */
+    font-weight: 800;
+    font-size: 2.5rem;
+    line-height: 1.2;
+    color: #000;
+}
+
+.lang-name {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    opacity: 0.7;
+    margin-top: 5px;
+}
+
+/* Sticker Colors */
+.lang-sticker.orange {
+    background-color: #f97316;
+    box-shadow: 8px 8px 0px #fff;
+}
+
+.lang-sticker.blue {
+    background-color: #3b82f6;
+    box-shadow: 8px 8px 0px #fff;
+}
+
+.lang-sticker.green {
+    background-color: #22c55e;
+    box-shadow: 8px 8px 0px #fff;
+}
+
+.lang-sticker.yellow {
+    background-color: #eab308;
+    box-shadow: 8px 8px 0px #fff;
+}
+
+/* Hover Shadow Colors - Match the card color or keep white/black contrast? 
+   Let's keep white shadow for high contrast on black bg, or maybe colored shadow?
+   White shadow looks "sticker-like" on black.
+*/
+
+@media (max-width: 768px) {
+    .section-title-lang {
+        font-size: 2rem;
+        /* Reduced from 2.5rem */
+    }
+
+    .lang-icon-main {
+        font-size: 3rem;
+        /* Reduced icon size */
+    }
+
+    .languages-grid {
+        gap: 15px;
+        /* Reduced gap */
+        padding: 0 20px;
+    }
+
+    .lang-sticker {
+        width: 45%;
+        /* Two per row instead of 100% */
+        min-width: 140px;
+        padding: 20px 15px;
+        /* Reduced padding */
+        transform: rotate(0deg) !important;
+        margin-bottom: 10px;
+        box-shadow: 4px 4px 0px #fff;
+        /* Smaller shadow */
+    }
+
+    .lang-sticker:hover {
+        box-shadow: 6px 6px 0px #fff;
+    }
+
+    .lang-native {
+        font-size: 1.8rem;
+        /* Reduced from 2.5rem */
+    }
+
+    .lang-name {
+        font-size: 0.8rem;
+    }
+}
